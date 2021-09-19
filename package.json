@@ -28,11 +28,13 @@
     "generate": "stencil generate"
   },
   "dependencies": {
+    "@capacitor/android": "latest",
     "@capacitor/app": "latest",
     "@capacitor/browser": "latest",
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
     "@capacitor/device": "latest",
+    "@capacitor/ios": "latest",
     "@capacitor/keyboard": "latest",
     "@capacitor/network": "latest",
     "@capacitor/splash-screen": "latest",
