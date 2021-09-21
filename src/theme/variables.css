@@ -70,3 +70,11 @@
     --ion-color-light-tint: #f5f6f9;
 
   }
+
+    .md {
+      --ion-background-color: #ffffff;
+      --ion-background-color-rgb: 18,18,18;
+      --ion-toolbar-background: #ffffff;  
+      --ion-tab-bar-background: #ffffff;
+    }
+  
