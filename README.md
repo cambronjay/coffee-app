@@ -6,7 +6,7 @@ A fun and useful coffee app. This is a real world example of a real time app tha
 2. npm install
 3. npm run buildNativeDebug (Debug build) or npm run buildNativeProd (Production build)
 *Note you will need to run buildNativeDebug or buildNativeProd before pushing to a native device or emulator. 
-*Note you may need to swap out the bundle id/package name of com.jaycambron.coffeeme and use your own signing certificate etc.
+
 ## Running the app on a device
 -npm run openios (this will open the app in Xcode)
 -npm run openandroid (this will open the app in Android Studio)
