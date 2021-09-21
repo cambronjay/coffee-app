@@ -12,8 +12,6 @@ export namespace Components {
     interface MenuTabs {
     }
     interface ModalAddBeverage {
-        "beverage": beverage;
-        "currentIntake": number;
     }
     interface ModalLogin {
     }
@@ -99,8 +97,6 @@ declare namespace LocalJSX {
         "onHaptic"?: (event: CustomEvent<any>) => void;
     }
     interface ModalAddBeverage {
-        "beverage"?: beverage;
-        "currentIntake"?: number;
     }
     interface ModalLogin {
     }

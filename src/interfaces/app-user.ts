@@ -1,6 +1,6 @@
 import type { FieldValue } from "firebase/firestore";
 
-import { formArrayInput } from "./common";
+import { formArrayInput, formInput } from "./common";
 
 export interface AppUser {
     ID: string;
@@ -42,4 +42,13 @@ export interface intake {
 export interface myIntake {
     caffeine: number;
     drinksLeft: number;
+}
+
+export interface beverageFormInput {
+    title: formInput;
+    description: formInput;
+    caffeinePerUnit: formInput;
+    servingsPerUnit: formInput;
+    unitVolume: formInput;
+    photo: string;
 }

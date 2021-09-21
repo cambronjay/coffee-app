@@ -1,12 +1,12 @@
-import { Component, h, Prop, State, Element, Event, EventEmitter, forceUpdate } from '@stencil/core';
+import { Component, h, Prop, State, Element, Event, EventEmitter, forceUpdate, getAssetPath } from '@stencil/core';
 import type { User } from 'firebase/auth';
 import type { DocumentData } from 'firebase/firestore';
 import type { AppUser, beverage } from '../../../interfaces/app-user';
 import type { Observable, Subscription } from "rxjs";
 
-import { modalController, alertController } from '@ionic/core'
+import { modalController, actionSheetController } from '@ionic/core';
 import { Caffeine } from '../../../providers/caffeine';
-import { doc, setDoc, arrayRemove } from 'firebase/firestore';
+import { doc, setDoc, arrayRemove, arrayUnion } from 'firebase/firestore';
 import { Firebase } from '../../../providers/firebase';
 import { docData } from 'rxfire/firestore';
 import { authState } from 'rxfire/auth';
@@ -14,7 +14,8 @@ import { pathType } from '../../../interfaces/constants';
 
 @Component({
     tag: 'screen-caffeine',
-    styleUrl: 'screen-caffeine.css'
+    styleUrl: 'screen-caffeine.css',
+    assetsDirs: ['assets']
 })
 export class ScreenCaffeine {
     @Prop() routerNav: HTMLIonRouterElement;
@@ -137,7 +138,7 @@ export class ScreenCaffeine {
                                         'width': '65px',
                                         'height': '65px'
                                     }}>
-                                        <ion-img src={beverage.photo}></ion-img>
+                                        <ion-img src={beverage.photo.length > 0 ? beverage.photo : getAssetPath('../assets/img/placeholder.png')}></ion-img>
                                     </ion-avatar>
                                     <ion-label>
                                         <h2 style={{
@@ -211,24 +212,53 @@ export class ScreenCaffeine {
     }
 
     async delete(beverage: beverage) {
-        const alert = await alertController.create({
+        const actionSheet = await actionSheetController.create({
             backdropDismiss: false,
-            header: 'Beverage',
-            message: 'Delete this beverage?',
-            buttons: [
-                { text: 'Yes' }
+            header: 'Delete Beverage?',
+            buttons: [{
+                text: 'Yes',
+                role: 'destructive',
+            },
+            {
+                text: 'No',
+                role: 'cancel'
+            }
             ]
         });
-        await alert.present();
-        await setDoc(doc(Firebase.firestore, `${pathType.users}/${Firebase.auth.currentUser.uid}`), {
-            caffeine: {
-                beverages: arrayRemove(beverage)
-            }
-        }, { merge: true });
+        await actionSheet.present();
+        const { role } = await actionSheet.onDidDismiss();
+        if (role === 'destructive') {
+            await setDoc(doc(Firebase.firestore, `${pathType.users}/${Firebase.auth.currentUser.uid}`), {
+                caffeine: {
+                    beverages: arrayRemove(beverage)
+                }
+            }, { merge: true });
+        }
+
     }
 
     async add() {
-
+        const modal = await modalController.create({
+            component: 'modal-add-beverage',
+            swipeToClose: false,
+            presentingElement: this.element.closest('ion-router-outlet')
+        });
+        await modal.present();
+        const { data } = await modal.onDidDismiss();
+        if (data && data.beverage.title) {
+            await setDoc(doc(Firebase.firestore, `${pathType.users}/${Firebase.auth.currentUser.uid}`), {
+                caffeine: {
+                    beverages: arrayUnion({
+                        title: data.beverage.title.value,
+                        description: data.beverage.description.value,
+                        caffeinePerUnit: data.beverage.caffeinePerUnit.value,
+                        servingsPerUnit: data.beverage.servingsPerUnit.value,
+                        unitVolume: data.beverage.unitVolume.value,
+                        photo: data.beverage.photo,
+                    })
+                }
+            }, { merge: true });
+        }
     }
 
     render() {

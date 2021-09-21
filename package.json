@@ -43,9 +43,11 @@
     "@capacitor/storage": "latest",
     "@ionic/core": "5.8.0",
     "autonumeric": "4.6.0",
+    "base64-arraybuffer": "1.0.1",
     "firebase": "9.0.2",
     "rxfire": "6.0.2",
-    "rxjs": "7.3.0"
+    "rxjs": "7.3.0",
+    "short-unique-id": "4.3.8"
   },
   "devDependencies": {
     "@capacitor/cli": "latest",
