@@ -79,7 +79,7 @@ export class ModalAddBeverage {
             } else {
                 try {
                     const image = await Camera.getPhoto({
-                        quality: 75,
+                        quality: 50,
                         allowEditing: false,
                         source: CameraSource.Prompt,
                         direction: CameraDirection.Rear,

@@ -1,9 +1,5 @@
 [
 	{
-		"pkg": "@capacitor-community/apple-sign-in",
-		"classpath": "com.getcapacitor.community.applesignin.SignInWithApple"
-	},
-	{
 		"pkg": "@capacitor/app",
 		"classpath": "com.capacitorjs.plugins.app.AppPlugin"
 	},
@@ -42,9 +38,5 @@
 	{
 		"pkg": "@capacitor/storage",
 		"classpath": "com.capacitorjs.plugins.storage.StoragePlugin"
-	},
-	{
-		"pkg": "@codetrix-studio/capacitor-google-auth",
-		"classpath": "com.codetrixstudio.capacitor.GoogleAuth.GoogleAuth"
 	}
 ]

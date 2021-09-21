@@ -319,17 +319,15 @@ export class ScreenCaffeine {
             </ion-content>,
             <ion-footer>
                 <ion-toolbar>
-                    <ion-title>
-                        <ion-item lines="none">
-                            <ion-label>
-                                <h2 style={{
-                                    'font-size': '16px',
-                                    'font-weight': '500',
-                                    'letter-spacing': '0.02em'
-                                }}>{this.caffeineLevels >= 0.75 ? this.caffeineLevels >= 1 ? 'Unsafe levels!' : 'Approaching unsafe levels' : this.caffeineLevels <= 0 ? 'No intake tracked' : 'Current intake is safe'}</h2>
-                            </ion-label>
-                        </ion-item>
-                    </ion-title>
+                    <ion-item lines="none" slot="start">
+                        <ion-label>
+                            <h2 style={{
+                                'font-size': '16px',
+                                'font-weight': '500',
+                                'letter-spacing': '0.02em'
+                            }}>{this.caffeineLevels >= 0.75 ? this.caffeineLevels >= 1 ? 'Max intake!' : 'Close to max' : this.caffeineLevels <= 0 ? 'No intake' : 'Safe intake'}</h2>
+                        </ion-label>
+                    </ion-item>
                     <ion-buttons slot="end">
                         <ion-button fill="clear" onClick={() => this.clearIntake()}>CLEAR</ion-button>
                     </ion-buttons>

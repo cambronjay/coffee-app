@@ -112,10 +112,10 @@ export class ModalTracker {
                             </ion-label>
                         </ion-item>
 
-                        <ion-item class="ion-padding-bottom" hidden={this.drinksLeft === null}>
+                        <ion-item class="ion-padding-bottom">
                             <ion-label>
                                 <h2>How many more can I have?</h2>
-                                <h3>{this.drinksLeft}</h3>
+                                <h3>{this.drinksLeft === null ? 'No amount entered' : this.drinksLeft}</h3>
                             </ion-label>
                         </ion-item>
                     </ion-card-content>
