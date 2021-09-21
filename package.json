@@ -16,9 +16,9 @@
     "lint.fix": "lint -- --fix",
     "buildProd": "stencil build --prod",
     "buildDebug": "stencil build",
-    "updatePlugins": "npx cap sync",
-    "deployDebug": "npm run buildDebug && npm run buildDebug && npx cap copy",
-    "deployProd": "npm run buildProd && npm run buildProd && npx cap sync",
+    "syncNative": "npx cap sync",
+    "buildNativeDebug": "npm run buildDebug && npm run buildDebug && npx cap sync",
+    "buildNativeProd": "npm run buildProd && npm run buildProd && npx cap sync",
     "openios": "npx cap open ios",
     "openandroid": "npx cap open android",
     "start": "stencil build --dev --watch --serve",
@@ -34,6 +34,7 @@
     "@capacitor/camera": "latest",
     "@capacitor/core": "latest",
     "@capacitor/device": "latest",
+    "@capacitor/haptics": "latest",
     "@capacitor/ios": "latest",
     "@capacitor/keyboard": "latest",
     "@capacitor/network": "latest",
@@ -41,6 +42,7 @@
     "@capacitor/status-bar": "latest",
     "@capacitor/storage": "latest",
     "@ionic/core": "5.8.0",
+    "autonumeric": "4.6.0",
     "firebase": "9.0.2",
     "rxfire": "6.0.2",
     "rxjs": "7.3.0"
@@ -68,10 +70,10 @@
   "prettier": "@ionic/prettier-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cambronjay/coffee.git"
+    "url": "git+https://github.com/cambronjay/coffee-app.git"
   },
   "bugs": {
-    "url": "https://github.com/cambronjay/coffee/issues"
+    "url": "https://github.com/cambronjay/coffee-app/issues"
   },
-  "homepage": "https://github.com/cambronjay/coffee"
+  "homepage": "https://github.com/cambronjay/coffee-app"
 }

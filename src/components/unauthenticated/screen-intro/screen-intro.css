@@ -1,0 +1,53 @@
+screen-intro .hideElement {
+  visibility: hidden;
+  opacity: 0;
+ }
+ 
+ screen-intro .showElement {
+   visibility: visible;
+   opacity: 1;
+  }
+  
+   screen-intro ion-toolbar {
+     --background: transparent;
+   }
+   
+   screen-intro ion-footer {
+     --background: transparent;
+   }
+   
+    screen-intro .swiper-pagination-bullet {
+     background: var(--ion-color-primary-shade) !important;
+     opacity: 0.5;
+   }
+   
+   screen-intro .swiper-pagination-bullet-active {
+     background: var(--ion-color-primary) !important;
+     opacity: 1;
+   } 
+   
+   screen-intro ion-slides {
+     height: 100%;
+   }
+   
+    screen-intro .swiper-slide {
+      display: block;
+    }
+   
+    screen-intro .slide-title {
+     margin-top: 2.8rem;
+    }
+   
+    screen-intro .swiper-slide img.slideVector {
+      max-height: 50%;
+      max-width: 75%;
+      margin-top: 8.5vh;
+    }
+   
+    screen-intro p {
+     padding: 0 20px;
+     font-size: 14px;
+     line-height: 1.5;
+      color: var(--ion-color-dark);
+    }
+   

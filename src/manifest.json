@@ -1,6 +1,6 @@
 {
-  "name": "Coffee",
-  "short_name": "Coffee",
+  "name": "CoffeeMe",
+  "short_name": "CoffeeMe",
   "start_url": "/",
   "display": "standalone",
   "icons": [
@@ -10,6 +10,6 @@
       "type": "image/png"
     }
   ],
-  "background_color": "#000000",
-  "theme_color": "#000000"
+  "background_color": "#ffffff",
+  "theme_color": "#473a34"
 }

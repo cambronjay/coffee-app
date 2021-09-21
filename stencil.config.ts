@@ -9,7 +9,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: false,
-      baseUrl: 'https://coffee.local/',
+      baseUrl: 'https://coffeeme.local/',
     },
   ],
 };

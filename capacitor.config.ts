@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: "com.jaycambron.coffee",
-  appName: "Coffee",
+  appId: "com.jaycambron.coffeeme",
+  appName: "CoffeeMe",
   loggingBehavior: "production",
   webDir: "www",
   bundledWebRuntime: false,
@@ -10,7 +10,7 @@ const config: CapacitorConfig = {
   plugins: {
     SplashScreen: {
       backgroundColor: "#000000",
-      launchAutoHide: true,
+      launchAutoHide: false,
       showSpinner: false,
       androidScaleType: "CENTER_CROP",
       splashFullScreen: true,
