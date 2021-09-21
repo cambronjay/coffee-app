@@ -15,5 +15,7 @@ A fun and useful coffee app. This is a real world example of a real time app tha
 
 ## Running the app in a browser
 -npm start
+
 -utilize safari's responsive design mode or chrome's device toolbar to emulate a mobile device
+
 *Native features like Camera will not work in the browser
