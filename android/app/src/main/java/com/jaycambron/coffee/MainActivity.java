@@ -1,4 +1,4 @@
-package com.jaycambron.coffee;
+package com.jaycambron.coffeeme;
 
 import com.getcapacitor.BridgeActivity;
 
