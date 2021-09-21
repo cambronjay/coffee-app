@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">Coffee</string>
-    <string name="title_activity_main">Coffee</string>
+    <string name="app_name">CoffeeMe</string>
+    <string name="title_activity_main">CoffeeMe</string>
     <string name="package_name">com.jaycambron.coffeeme</string>
     <string name="custom_url_scheme">com.jaycambron.coffeeme</string>
 </resources>
